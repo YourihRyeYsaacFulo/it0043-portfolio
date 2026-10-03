@@ -1,10 +1,14 @@
 :root {
-    --color-background: white;
-    --background-color-secondary: skyblue;
-    --color-text: skyblue;
-    --color-text-secondary: rgb(0, 100, 158);
-    --color-text-tertiary: rgb(0, 0, 0);
-    --color-accent: skyblue;
+    --color-background: #ffffff;
+    --background-color-secondary: #0077b6;
+
+
+    --color-text: #1a1a1a;
+    --color-text-secondary: #005b8e;
+    --color-text-tertiary: #000000;
+
+    --color-accent: #0096c7;
+    --color-skyblue-light: #87ceeb;
 
     --space-small: 0.5rem;
     --space-medium: 1rem;
@@ -15,9 +19,8 @@
     --text-body: 1rem;
     --text-heading: 2rem;
     --text-title: 3rem;
-    --text-align: center;
+    --text-align: left;
 }
-
 main {
     max-width: 800px;
     margin: 0 auto;
