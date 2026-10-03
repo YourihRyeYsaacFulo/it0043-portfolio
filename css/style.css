@@ -1,5 +1,6 @@
 :root {
     --color-background: white;
+    --background-color-secondary: skyblue;
     --color-text: skyblue;
     --color-text-secondary: rgb(0, 100, 158);
     --color-text-tertiary: rgb(0, 0, 0);
@@ -29,6 +30,12 @@ body {
     font-family: var(--font-main);
 }
 
+header {
+    background-color: var(--background-color-secondary);
+    padding: var(--space-medium);
+    text-align: var(--text-align);
+}
+
 caption {
     font-weight: bold;
     margin-bottom: var(--space-small);
@@ -38,6 +45,7 @@ h1 {
     font-size: var(--text-title);
     margin-bottom: var(--space-medium);
     text-align: var(--text-align);
+    color: white;
 }
 
 h2 {
@@ -52,9 +60,6 @@ p {
     margin-bottom: var(--space-medium);
     color: var(--color-text-secondary);
     text-align: var(--text-align);
-    border: 1px solid var(--color-accent);
-    padding: var(--space-small);
-    background-color: var(--color-background);
 }
 
 section {
@@ -94,6 +99,8 @@ footer {
     margin-top: var(--space-large);
     font-size: var(--text-small);
     color: var(--color-text-secondary);
+    background-color: var(--background-color-secondary);
+    padding: 12px;
 }
 
 form {
@@ -105,6 +112,7 @@ a {
     color: var(--color-accent);
     text-decoration: none;
     text-align: var(--text-align);
+    color: white;
 }
 
 a:hover {
