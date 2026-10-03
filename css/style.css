@@ -45,24 +45,24 @@ caption {
 }
 
 h1 {
-    font-size: var(--text-title);
+    font-size: clamp(1.75rem, 5vw, var(--text-title));
     margin-bottom: var(--space-medium);
-    text-align: var(--text-align);
+    text-align: center;
     color: white;
 }
 
 h2 {
-    font-size: var(--text-heading);
+    font-size: clamp(1.25rem, 3.5vw, var(--text-heading));
     margin-bottom: var(--space-small);
     color: var(--color-text-secondary);
-    text-align: var(--text-align);
+    text-align: center;
 }
 
 p {
     font-size: var(--text-body);
     margin-bottom: var(--space-medium);
     color: var(--color-text-secondary);
-    text-align: var(--text-align);
+    text-align: left;
 }
 
 section {
