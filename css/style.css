@@ -106,9 +106,13 @@ li {
 footer {
     margin-top: var(--space-large);
     font-size: var(--text-small);
-    color: var(--color-text-secondary);
+    color: white;
     background-color: var(--background-color-secondary);
     padding: 12px;
+}
+
+footer p {
+    color: white;
 }
 
 form {
@@ -186,4 +190,8 @@ textarea:focus-visible {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-large);
+}
+
+.about-grid h2 {
+    text-align: left;
 }
