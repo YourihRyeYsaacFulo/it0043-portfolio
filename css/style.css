@@ -138,3 +138,14 @@ textarea:focus-visible {
     width: 100%;
     overflow-x: auto;
 }
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-large);
+}
+
+.about-grid > section,
+.about-grid > article {
+    border: 2px solid black;
+}
