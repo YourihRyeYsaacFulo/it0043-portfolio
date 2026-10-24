@@ -1,6 +1,7 @@
 const menuButton = document.querySelector("#menu-toggle");
 const menu = document.querySelector("#main-nav");
 
+// Allows users to open and close the navigation menu.
 menuButton.addEventListener("click", function () {
     if (menu.style.display === "none") {
         menu.style.display = "block";
@@ -12,6 +13,7 @@ menuButton.addEventListener("click", function () {
 
 const themeButton = document.querySelector("#theme-toggle");
 
+// Allows users to toggle between light and dark mode.
 themeButton.addEventListener("click", function () {
     document.body.classList.toggle("dark-mode");
 });
@@ -61,6 +63,7 @@ if (contactForm) {
     const messageError = document.querySelector("#message-error");
     const successMessage = document.querySelector("#success-message");
 
+    //Checks the form fields and prevents invalid submissions.
     contactForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -95,18 +98,21 @@ if (contactForm) {
         }
     });
 
+    // Clears the name error when the user enters a name.
     nameInput.addEventListener("input", function () {
         if (nameInput.value.trim() !== "") {
             nameError.textContent = "";
         }
     });
 
+    // Clears the email error when the user enters a valid email.
     emailInput.addEventListener("input", function () {
         if (emailInput.value.trim() !== "" && emailInput.validity.valid) {
             emailError.textContent = "";
         }
     });
 
+    // Clears the message error when the user enters a message.
     messageInput.addEventListener("input", function () {
         if (messageInput.value.trim() !== "") {
             messageError.textContent = "";
