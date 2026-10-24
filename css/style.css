@@ -209,3 +209,18 @@ textarea:focus-visible {
         display: none;
     }
 }
+
+.dark-mode {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.dark-mode header,
+.dark-mode footer {
+    background-color: #000000;
+}
+
+.dark-mode h2,
+.dark-mode p {
+    color: white;
+}

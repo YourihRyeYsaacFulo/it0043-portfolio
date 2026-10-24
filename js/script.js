@@ -8,3 +8,10 @@ menuButton.addEventListener("click", function () {
         menu.style.display = "none";
     }
 });
+
+
+const themeButton = document.querySelector("#theme-toggle");
+
+themeButton.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+});
