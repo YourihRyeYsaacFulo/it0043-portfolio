@@ -195,3 +195,17 @@ textarea:focus-visible {
 .about-grid h2 {
     text-align: left;
 }
+
+#menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+    }
+
+    #main-nav {
+        display: none;
+    }
+}
