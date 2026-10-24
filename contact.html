@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>it0043 Portfolio</title>
+    <title>it0043 Portfolio - Contact</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
-<link rel="stylesheet" href="css/style.css">
 <body>
 
     <header>
         <h1>Fulo, Yourih Rye Ysaac</h1>
 
         <button id="theme-toggle" type="button">Dark Mode</button>
-
         <button id="menu-toggle" type="button">Menu</button>
 
         <nav id="main-nav">
@@ -26,21 +23,33 @@
             </ul>
         </nav>
     </header>
-<form>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+    <main>
+        <h2>Contact Me</h2>
 
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" required></textarea>
+        <form id="contact-form" novalidate>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <p id="name-error"></p>
 
-    <button type="submit">Send</button>
-</form>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <p id="email-error"></p>
 
-<footer>
-    <p>&copy; 2026 Yourih Rye Ysaac Fulo</p>
-</footer>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+            <p id="message-error"></p>
 
-<script src="js/script.js"></script>
+            <button type="submit">Send</button>
+
+            <p id="success-message"></p>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Yourih Rye Ysaac Fulo</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
