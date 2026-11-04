@@ -210,17 +210,17 @@ textarea:focus-visible {
     }
 }
 
-.dark-mode {
+html.dark-mode body {
     background-color: #1a1a1a;
     color: white;
 }
 
-.dark-mode header,
-.dark-mode footer {
+html.dark-mode header,
+html.dark-mode footer {
     background-color: #000000;
 }
 
-.dark-mode h2,
-.dark-mode p {
+html.dark-mode h2,
+html.dark-mode p {
     color: white;
 }

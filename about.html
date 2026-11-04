@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>it0043 Portfolio - About</title>
+
+    <script>
+        try {
+            const savedSettings = JSON.parse(
+                localStorage.getItem("portfolioSettings")
+            );
+
+            if (savedSettings && savedSettings.theme === "dark") {
+                document.documentElement.classList.add("dark-mode");
+            }
+        } catch (error) {
+        }
+    </script>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>

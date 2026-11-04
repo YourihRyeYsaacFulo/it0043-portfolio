@@ -1,23 +1,87 @@
+const defaultSettings = {
+    theme: "light",
+    visitorName: "",
+    lastVisit: ""
+};
+
+let settings = { ...defaultSettings };
+
+// Load saved settings.
+try {
+    const savedSettings = JSON.parse(
+        localStorage.getItem("portfolioSettings")
+    );
+
+    if (savedSettings) {
+        if (savedSettings.theme === "light" ||
+            savedSettings.theme === "dark") {
+            settings.theme = savedSettings.theme;
+        }
+
+        if (typeof savedSettings.visitorName === "string") {
+            settings.visitorName = savedSettings.visitorName;
+        }
+
+        if (typeof savedSettings.lastVisit === "string") {
+            settings.lastVisit = savedSettings.lastVisit;
+        }
+    }
+} catch (error) {
+    settings = { ...defaultSettings };
+}
+
+// Save settings in one place.
+function saveSettings() {
+    try {
+        localStorage.setItem(
+            "portfolioSettings",
+            JSON.stringify(settings)
+        );
+    } catch (error) {
+        console.log("Settings could not be saved.");
+    }
+}
+
+// Apply the saved theme.
+if (settings.theme === "dark") {
+    document.documentElement.classList.add("dark-mode");
+}
+
+// Record this visit.
+settings.lastVisit = new Date().toISOString();
+saveSettings();
+
 const menuButton = document.querySelector("#menu-toggle");
 const menu = document.querySelector("#main-nav");
 
-// Allows users to open and close the navigation menu.
-menuButton.addEventListener("click", function () {
-    if (menu.style.display === "none") {
-        menu.style.display = "block";
-    } else {
-        menu.style.display = "none";
-    }
-});
-
+// Open and close the navigation menu.
+if (menuButton && menu) {
+    menuButton.addEventListener("click", function () {
+        if (menu.style.display === "none" ||
+            getComputedStyle(menu).display === "none") {
+            menu.style.display = "block";
+        } else {
+            menu.style.display = "none";
+        }
+    });
+}
 
 const themeButton = document.querySelector("#theme-toggle");
 
-// Allows users to toggle between light and dark mode.
-themeButton.addEventListener("click", function () {
-    document.body.classList.toggle("dark-mode");
-});
+// Switch between light and dark mode.
+if (themeButton) {
+    themeButton.addEventListener("click", function () {
+        document.documentElement.classList.toggle("dark-mode");
 
+        if (document.documentElement.classList.contains("dark-mode")) {
+            settings.theme = "dark";
+        } else {
+            settings.theme = "light";
+        }
+
+        saveSettings();
+    });
+}
 
 const hobbies = [
     {
@@ -43,7 +107,8 @@ if (hobbiesContainer) {
             const hobbyDescription = document.createElement("p");
 
             hobbyTitle.textContent = hobby.title || "Untitled Hobby";
-            hobbyDescription.textContent = hobby.description || "No description available.";
+            hobbyDescription.textContent =
+                hobby.description || "No description available.";
 
             hobbiesContainer.appendChild(hobbyTitle);
             hobbiesContainer.appendChild(hobbyDescription);
@@ -63,7 +128,6 @@ if (contactForm) {
     const messageError = document.querySelector("#message-error");
     const successMessage = document.querySelector("#success-message");
 
-    //Checks the form fields and prevents invalid submissions.
     contactForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -93,26 +157,25 @@ if (contactForm) {
         }
 
         if (isValid) {
-            successMessage.textContent = "Your message was submitted successfully!";
+            successMessage.textContent =
+                "Your message was submitted successfully!";
             contactForm.reset();
         }
     });
 
-    // Clears the name error when the user enters a name.
     nameInput.addEventListener("input", function () {
         if (nameInput.value.trim() !== "") {
             nameError.textContent = "";
         }
     });
 
-    // Clears the email error when the user enters a valid email.
     emailInput.addEventListener("input", function () {
-        if (emailInput.value.trim() !== "" && emailInput.validity.valid) {
+        if (emailInput.value.trim() !== "" &&
+            emailInput.validity.valid) {
             emailError.textContent = "";
         }
     });
 
-    // Clears the message error when the user enters a message.
     messageInput.addEventListener("input", function () {
         if (messageInput.value.trim() !== "") {
             messageError.textContent = "";
